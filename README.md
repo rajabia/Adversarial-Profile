@@ -2,7 +2,6 @@
 ### Under Develpment
 
 
-
 ## What does Adversarial Profile mean:
 
 
@@ -43,5 +42,8 @@ $pip3 install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f https://download.py
 $python3 trainmodels.py --dataset mnist
 
 $python3 TrainAdvProfile.py --dataset mnist
+
+Please cite A. Rajabi , R. Bobba, "Adversarial Profile: Detecting Out-distribution Samples and Adversarial Examples for Pre-trained CNNs ", DSN workshop on Dependable and Secure Machine Learning (DSML) 2019 if you used this code [slides][DSML.pptx]
+
 
 
