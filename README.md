@@ -3,20 +3,28 @@
 
 
 
-## What does Adversarial Profile means:
-
-### Dfinition 1: 
+## What does Adversarial Profile mean:
 
 
-For a given CNN, adversarial profile of ith class (C_i) is a set of adversarial perturbations <img src="https://render.githubusercontent.com/render/math?math=\{\delta_{i,1},\cdots, \delta_{i,i-1},  \delta_{i,i%2B1},\cdots, \delta_{i,c} \}">
+For a given CNN, adversarial profile of ith class (C_i) is a set of adversarial perturbations <img src="https://render.githubusercontent.com/render/math?math=\{\delta_{i,1},\cdots, \delta_{i,i-1},  \delta_{i,i%2B1},\cdots, \delta_{i,c} \}"> to any clean sample from class $i$ leads the target CNN to misclassify that sample to class j (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\in c_i , \:\:\: \mathrm{argmax}\:\:F(x+\delta_{i,j})=j"> ) with high probability; and ii) adding <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}"> to any clean sample from other classes (except i), would lead the CNN to  misclassify that sample to any other class except $j$ (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\notin c_i , \:\:\: \mathrm{argmax} \:\:F(x+\delta_{i,j})\neq j"> ). 
 
-  to any clean sample from class $i$ leads the target CNN to misclassify that sample to class j (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\in c_i , \:\:\: \mathrm{argmax}\:\:F(x+\delta_{i,j})=j"> ) with high probability; and ii) adding <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}"> to any clean sample from other classes (except i), would lead the CNN to  misclassify that sample to any other class except $j$ (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\notin c_i , \:\:\: \mathrm{argmax} \:\:F(x+\delta_{i,j})\neq j"> ).
+<img src="figs/example.png" width=300> 
 
-Extended Carlini Wagnar Attack for Learning Targeted and Untargeted Universal Perturbation
-This attack is an extension of https://github.com/rwightman/pytorch-nips2017-attack-example 
+
+We say an adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is \emph{$p_{i,j}$-intra-class transferable} if the probability of fooling CNN to the target class j for samples from source class i is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=p(\mathrm{argmax}\:\: F(x+\delta_{i,j})==j|x\in C_i)=p_{i,j}"> ).
 
 | <img src="figs/MNIST_InDist_Transferability.png" width=300> | <img src="figs/MNIST_OutDist_Transferability.png" width=300>
 |:--:|:--:| 
 | Intra class transferability matrix  |Inter class transferability matrix |
 
 The element at [i,j]  in Inter class transferability matrix represents the value of p_{i,j}. Similarly,  the element at [i,j]  in intra class transferability matrix  represents the value of e_{i,j}. The larger value for p_{i,j} and lower value for e_{i,j} are preferred.
+
+## How to learn:
+Finding an adversarial perturbation  <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}"> ) that is be able to fool all samples from class i to target class j is hard and computationally expensive. Therefore,  we only use n randomly selected samples from each source class to learn an adversarial perturbation and accept it for use in the adversarial profile if it can fool the CNN for at least p*n of them (0<p<1). 
+
+Extended Carlini Wagnar Attack for Learning Targeted and Untargeted Universal Perturbation
+This attack is an extension of https://github.com/rwightman/pytorch-nips2017-attack-example 
+
+
+
+
