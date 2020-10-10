@@ -214,7 +214,7 @@ class AttackCarliniWagnerL2:
             if  o_best_l2>dist and  batch_success>p_value*(batch_failure+batch_success):
                 o_best_l2 = dist
                 best_mod=adv_noise
-                print('***********************************************',best_mod.shape)
+                
             # end outer search loop
 
         return best_mod
