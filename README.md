@@ -31,5 +31,14 @@ Extended Carlini Wagnar Attack for Learning Targeted and Untargeted Universal Pe
 This attack is an extension of https://github.com/rwightman/pytorch-nips2017-attack-example 
 
 
+## How to run
+### Install pythorch in a python virtual env
+$python3 -m venv myenv
+$source myenv/bin/activate.csh
+$pip3 install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+
+### Train a CNN
+$python3 trainmodels.py --dataset mnist
+$python3 TrainAdvProfile.py --dataset mnist
 
 
