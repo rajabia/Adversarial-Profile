@@ -11,18 +11,18 @@ For a given CNN, adversarial profile of ith class (C_i) is a set of adversarial 
 <img src="figs/example.png" width=300 align=center> 
 
 
-We say an adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}"> -intra-class transferable} if the probability of fooling CNN to the target class j for samples from source class i is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=p(\mathrm{argmax}\:\: F(x+\delta_{i,j})==j|x\in C_i)=p_{i,j}"> ).
+We say an adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}"> -intra-class transferable} if the probability of fooling CNN to the target class j for samples from source class i is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=Prob(\mathrm{argmax}\:\: F(x+\delta_{i,j})==j|x\in C_i)=p_{i,j}"> ).
 
-Although, the adversarial perturbation $\delta_{i,j}$ is learned on source class $i$ but there is a possibility that this perturbation also works on samples from other classes (not class i). To measure transferability of an adversarial perturbation for other classes we define  Inter-Class Transferability. 
+Although, the adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is learned on source class $i$ but there is a possibility that this perturbation also works on samples from other classes (not class i). To measure transferability of an adversarial perturbation for other classes we define  Inter-Class Transferability. 
 
 
-We call adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}"> inter-class-transferable if the probability of fooling the  CNN to the target class j for samples from other classes (not equal to i) is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=p(\mathrm{argmax}\:\: F(x+\delta_{i,j})==j|x\notin C_i)=e_{i,j}">.
+We call adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}"> inter-class-transferable if the probability of fooling the  CNN to the target class j for samples from other classes (not equal to i) is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=Prob(\mathrm{argmax}\:\: F(x+\delta_{i,j})==j|x\notin C_i)=e_{i,j}">.)
 
 | <img src="figs/MNIST_InDist_Transferability.png" width=300> | <img src="figs/MNIST_OutDist_Transferability.png" width=300>
 |:--:|:--:| 
 | Intra class transferability matrix  |Inter class transferability matrix |
 
-The element at [i,j]  in Inter class transferability matrix represents the value of p_{i,j}. Similarly,  the element at [i,j]  in intra class transferability matrix  represents the value of<img src="https://render.githubusercontent.com/render/math?math=e_{i,j}"> . The larger value for <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}">  and lower value for e_{i,j} are preferred.
+The element at [i,j]  in Inter class transferability matrix represents the value of p_{i,j}. Similarly,  the element at [i,j]  in intra class transferability matrix  represents the value of<img src="https://render.githubusercontent.com/render/math?math=e_{i,j}"> . The larger value for p_{i,j}  and lower value for e_{i,j} are preferred.
 
 ## How to learn:
 Finding an adversarial perturbation  (<img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">) that is be able to fool all samples from class i to target class j is hard and computationally expensive. Therefore,  we only use n randomly selected samples from each source class to learn an adversarial perturbation and accept it for use in the adversarial profile if it can fool the CNN for at least p*n of them (0<p<1). 
