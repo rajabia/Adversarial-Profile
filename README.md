@@ -43,7 +43,7 @@ $python3 trainmodels.py --dataset mnist
 
 $python3 TrainAdvProfile.py --dataset mnist
 
-Please cite A. Rajabi , R. Bobba, "Adversarial Profile: Detecting Out-distribution Samples and Adversarial Examples for Pre-trained CNNs ", DSN workshop on Dependable and Secure Machine Learning (DSML) 2019 if you used this code [slides](DSML.pptx)
+Please cite A. Rajabi , R. Bobba, "Adversarial Profile: Detecting Out-distribution Samples and Adversarial Examples for Pre-trained CNNs ", DSN workshop on Dependable and Secure Machine Learning (DSML) 2019 if you used this code [slides](DSML2019.pptx)
 
 
 
