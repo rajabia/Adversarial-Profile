@@ -3,6 +3,10 @@
 Extended Carlini Wagnar Attack for Learning Targeted and Untargeted Universal Perturbation
 This attack is an extension of https://github.com/rwightman/pytorch-nips2017-attack-example 
 
+| ![space-1.jpg](figs/MNIST_OutDist_Transferability.png) | 
+|:--:| 
+| The element at [i,j]  in Inter class transferability matrix represents the value of p_{i,j} |
+
 <p>
     <img src="figs/MNIST_OutDist_Transferability.png" width=300>
     <em> The element at [i,j]  in Inter class transferability matrix represents the value of p_{i,j}</em>
