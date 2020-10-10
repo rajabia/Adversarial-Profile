@@ -6,7 +6,7 @@
 ## What does Adversarial Profile means:
 
 ### Dfinition 1: 
-<img src="https://render.githubusercontent.com/render/math?math=\{\delta_{i,1},\cdots, \delta_{i,i-1},  \delta_{i,i+1},\cdots, \delta_{i,c} \} =x%2B1">
+<img src="https://render.githubusercontent.com/render/math?math=\{\delta_{i,1},\cdots, \delta_{i,i-1},  \delta_{i,i+1},\cdots, \delta_{i,c} \}">
 
 
 
