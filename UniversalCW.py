@@ -99,7 +99,7 @@ class AttackCarliniWagnerL2:
 
         # python/numpy placeholders for the overall best l2, label score, and adversarial image
         o_best_l2 = 1e10
-        o_best_score = [-1] * batch_size
+        
         
 
         # setup input (image) variable, clamp/scale as necessary
