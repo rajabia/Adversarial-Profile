@@ -5,13 +5,13 @@
 ## What does Adversarial Profile mean:
 
 
-For a given CNN, adversarial profile of ith class (C_i) is a set of adversarial perturbations <img src="https://render.githubusercontent.com/render/math?math=\{\delta_{i,1},\cdots, \delta_{i,i-1},  \delta_{i,i%2B1},\cdots, \delta_{i,c} \}"> when added to any clean sample from class i leads the target CNN to misclassify that sample to class j (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\in c_i , \:\:\: \mathrm{argmax}\:\:F(x+\delta_{i,j})=j"> ) with high probability; and ii) adding <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}"> to any clean sample from other classes (except i), would lead the CNN to  misclassify that sample to any other class except j (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\notin c_i , \:\:\: \mathrm{argmax} \:\:F(x+\delta_{i,j})\neq j"> ). 
+For a given CNN, adversarial profile of ith class (C_i) is a set of adversarial perturbations <img src="https://render.githubusercontent.com/render/math?math=\{\delta_{i,1},\cdots, \delta_{i,i-1},  \delta_{i,i%2B1},\cdots, \delta_{i,c} \}"> when added to any clean sample from class i leads the target CNN to misclassify that sample to class j (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\in c_i , \:\:\: \mathrm{argmax}\:\:F(x%2B\delta_{i,j})=j"> ) with high probability; and ii) adding <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}"> to any clean sample from other classes (except i), would lead the CNN to  misclassify that sample to any other class except j (i.e., if <img src="https://render.githubusercontent.com/render/math?math=x\notin c_i , \:\:\: \mathrm{argmax} \:\:F(x%2B\delta_{i,j})\neq j"> ). 
 
 <img src="figs/example.png" width=500 align=center> 
 <img src="figs/example2.png" width=500 align=center> 
 
 
-We say an adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}"> -intra-class transferable} if the probability of fooling CNN to the target class j for samples from source class i is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=Prob(\mathrm{argmax}\:\: F(x+\delta_{i,j})==j|x\in C_i)=p_{i,j}"> ).
+We say an adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}"> -intra-class transferable} if the probability of fooling CNN to the target class j for samples from source class i is <img src="https://render.githubusercontent.com/render/math?math=p_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=Prob(\mathrm{argmax}\:\: F(x%2B\delta_{i,j})==j|x\in C_i)=p_{i,j}"> ).
 
 
 
@@ -20,7 +20,7 @@ Although, the adversarial perturbation <img src="https://render.githubuserconten
 
 
 
-We call adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}"> inter-class-transferable if the probability of fooling the  CNN to the target class j for samples from other classes (not equal to i) is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=Prob(\mathrm{argmax}\:\: F(x+\delta_{i,j})==j|x\notin C_i)=e_{i,j}">.)
+We call adversarial perturbation <img src="https://render.githubusercontent.com/render/math?math=\delta_{i,j}">  is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}"> inter-class-transferable if the probability of fooling the  CNN to the target class j for samples from other classes (not equal to i) is <img src="https://render.githubusercontent.com/render/math?math=e_{i,j}">  (i.e., <img src="https://render.githubusercontent.com/render/math?math=Prob(\mathrm{argmax}\:\: F(x%2B\delta_{i,j})==j|x\notin C_i)=e_{i,j}">.)
 
 | <img src="figs/MNIST_InDist_Transferability.png" width=300> | <img src="figs/MNIST_OutDist_Transferability.png" width=300>
 |:--:|:--:| 
