@@ -36,7 +36,7 @@ This attack is an extension of https://github.com/rwightman/pytorch-nips2017-att
 
 
 ## How to run
-### Install pythorch in a python virtual env
+### Install PyTorch in a python virtual env.
 $python3 -m venv myenv
 
 $source myenv/bin/activate.csh
